@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width:100vw;
+            padding: 0;
+            margin: 0;
+        }
+        #demo {
+            display:inline;
+            background-color: black;
+            position: absolute;
+            animation-name: love;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            
+        }
+        @keyframes love{
+            0%{
+                top:50%;
+                left:0%;
+            }
+            25%{
+                top:100%;
+                left:50%;
+            }
+            50%{
+                top:50%;
+                left: 90%;
+            }
+            75%{
+                top:0%;
+                left: 50%;
+            }
+            100%{
+                top:50%;
+                left:0%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Kavin</h1>
+    <p id="demo">MY Life My Rulzz</p>
+    <script>
+        const par = document.getElementById('demo');
+        
+        par.style.color="pink";
+    </script>
+</body>
+</html>

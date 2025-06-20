@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 50px;
+}
+
+.game {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.choices button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #6ec1e4;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.choices button:hover {
+    background-color: #369bc9;
+}
+
+.result p, .result h2 {
+    margin: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="game">
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+            <button onclick="play('rock')">✊ Rock</button>
+            <button onclick="play('paper')">✋ Paper</button>
+            <button onclick="play('scissors')">✌️ Scissors</button>
+        </div>
+        <div class="result">
+            <p id="user-choice">You chose: </p>
+            <p id="computer-choice">Computer chose: </p>
+            <h2 id="winner">Result: </h2>
+        </div>
+    </div>
+
+    <script>
+        function play(userChoice) {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+    document.getElementById('user-choice').textContent = `You chose: ${userChoice}`;
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerChoice}`;
+
+    const result = getWinner(userChoice, computerChoice);
+    document.getElementById('winner').textContent = `Result: ${result}`;
+}
+
+function getWinner(user, computer) {
+    if (user === computer) return "It's a Draw!";
+    if (
+        (user === 'rock' && computer === 'scissors') ||
+        (user === 'paper' && computer === 'rock') ||
+        (user === 'scissors' && computer === 'paper')
+    ) {
+        return 'You Win!';
+    }
+    return 'You Lose!';
+}
+
+    </script>
+</body>
+</html>

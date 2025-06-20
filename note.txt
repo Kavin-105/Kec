@@ -1,0 +1,32 @@
+coderunner
+npm
+
+Functions:
+    maps()
+    filter()
+    reduce()
+    forEach()
+
+Destructuring in JS:
+	destructure the array into an objects.
+
+ let mark = [10,10,20,40];
+ const[a,b,c,d] = mark;
+ console.log(a);
+ console.log(b);
+
+Spread operator in Array:
+	used to merge two arrays.
+
+ let mark = [10,10,20,40];
+ let name = ["kavin",'koe'];
+ const all = [...name,...mark];
+console.log(all);
+
+Spread operator in Object:
+	used to merge two objects.
+
+const ob1 = {name:"kavin" };
+const ob2 = {age:20 };
+const mer = {...ob1,...ob2};
+console.log(mer);
